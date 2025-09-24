@@ -10,7 +10,7 @@
    printf("\n Entrez la taille de Tableau: ");
    scanf("%d",&N);
        for(int i=0;i<N;i++){
-              printf("\nEntrez les elements dans le tableaux :\n");
+              printf("\nEntrez les elements dans le tableaux :");
               scanf("%d",&T[i]);     
                
        }
