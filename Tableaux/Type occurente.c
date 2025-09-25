@@ -23,11 +23,7 @@
               break;
        }
 }
-       if(X==0){
               printf(":%d",X);
-       }else {
-              printf("trouve est %d",X);
-       }
 
        
 
