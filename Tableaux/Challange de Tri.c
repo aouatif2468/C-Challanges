@@ -1,37 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-  int T[]={};
-  int tmp;
-  int i;
-  int X;
-  int N;
-  int m;
-  
-  int main(){
-       printf("Donne la saise de tableaux :");
-       scanf("%d",&N);
-        
-       
-       for (int i=0;i< N ;i++){
-       printf("Remplir le tableaux :\n ");
-       scanf("%d",&T[i]);
+int main() {
+    int N, tmp;
+
+    printf("Donne moi la taille du tableau : ");
+    scanf("%d", &N);
+
+    int T[N]; // tableau de taille N
+
+    // Remplissage
+    for (int i = 0; i < N; i++) {
+        printf("Remplir le tableau : ");
+        scanf("%d", &T[i]);
+    }
+
+    // Tri (par sélection)
+    for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+            if (T[i] > T[j]) {
+                tmp = T[i];
+                T[i] = T[j];
+                T[j] = tmp;
+            }
         }
-        printf("Donne que ta besoin de rchercher :");
-       scanf("%d",&m);
-       X=0;
-       for (i=0;i< N;i++){
-       if(T[i]==m){
-              X++;
-              break;
-       }
+    }
+
+    // Affichage
+    printf("Le tableau trié est : ");
+    for (int i = 0; i < N; i++) {
+        printf("%d ", T[i]);
+    }
+    printf("\n");
+
+    return 0;
 }
-       if(X==0){
-              printf("ne se trove pas valeur se trouve :%d",m);
-       }else {
-              printf("trouve est %d",m);
-       }
-
-       
-
-  return 0;
-  }
