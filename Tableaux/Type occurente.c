@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-  int T[10];
+ 
   int tmp;
   int i;
   int X;
@@ -8,8 +8,8 @@
   int m;
   
   int main(){
-        
-       
+       printf("Entrez la t")
+       int T[10]; 
        for (int i=0;i< 10 ;i++){
        printf("Remplir le tableaux :\n ");
        scanf("%d",&T[i]);
