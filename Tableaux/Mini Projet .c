@@ -3,9 +3,11 @@
 
 int main(){
        int Choix ;
-       char titre[50][100];
-       char auteur[50][100];
-       float prix[50];
+       char titre[10][50];
+       char auteur[10][50];
+       int prix[10];
+       int quantite[10];
+       int nbLivre = 0;
        
        do{
 
@@ -19,25 +21,38 @@ int main(){
        printf("Donne moi ton choix !  ");
        scanf("%d",&Choix);
 
-       if(Choix < 0 || Choix > 6 ){
-              printf("Erreur : Veuillez entrer une valeur entre 0 et 6.\n\n\n");
-              continue;
-       } 
+        if (Choix < 0 || Choix > 6) {
+            printf("Erreur : Veuillez entrer une valeur entre 0 et 6.\n\n");
+            sleep(1); 
+            continue;
+        }
 
 switch(Choix){
      case 1:
+     if(nbLivre < 10){
      printf("Titre du livre.\n");
-     for(int i; i<50;i++){
-       for(int j;j<100;j++){
-         scanf("%s",titre[i][j]);
-     }
-     }
-     printf("Auteur du livre.\n");
+     scanf("%s",titre[nbLivre]);
+     printf("Auteur du livre..\n");
+     scanf("%s",auteur[nbLivre]);
      printf("Prix du livre.\n");
-     printf("Quantite en stock.\n");
+     scanf("%d",&prix[nbLivre]);
+     printf("Quantite du livre %d: ", nbLivre+1);
+     scanf("%d", &quantite[nbLivre]);
+     nbLivre++;
+     }else {
+       printf("Stock est plien :");
+     }
      break;
-     case 2:
-     break;
+  case 2:
+              
+        for (int i = 0; i < nbLivre; i++) {
+            printf("Livre %d:\n", i + 1);
+            printf("  Titre : %s\n", titre[i]);
+            printf("  Auteur: %s\n", auteur[i]);
+            printf("  Prix  : %d\n", prix[i]);
+            printf("  Quantite: %d\n\n", quantite[i]);
+        }
+    break;
      case 3:
      break;
      case 4:
@@ -46,10 +61,12 @@ switch(Choix){
      break;
      case 6:
      break;
-     default:
-       printf(" V.");
-     break;
-}
+     case 0:
+       printf("Au revoir !\n");
+       break;
+            default:
+                break;
+        }
 
 }while(Choix != 0);
 
