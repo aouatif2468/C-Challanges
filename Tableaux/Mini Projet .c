@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <string.h>
 
 
 int main(){
@@ -8,6 +9,9 @@ int main(){
        int prix[10];
        int quantite[10];
        int nbLivre = 0;
+       char titreRecherche[10];
+        int i;
+
        
        do{
 
@@ -54,7 +58,23 @@ switch(Choix){
         }
     break;
      case 3:
-     break;
+     printf("Entrez le titre du livre à rechercher : ");
+     scanf("%s", titreRecherche);
+     i = 0;
+        while (i < nbLivre && strcmp(titreRecherche, titre[i]) != 0) {
+            i++;
+        }
+
+        if (i < nbLivre) {
+            printf("Livre troue a la position %d\n", i + 1);
+            printf("  Titre : %s\n", titre[i]);
+            printf("  Auteur: %s\n", auteur[i]);
+            printf("  Prix  : %d\n", prix[i]);
+            printf("  Quantite: %d\n\n", quantite[i]);
+        } else {
+            printf("Livre non trouvé\n");
+        }
+    break;
      case 4:
      break;
      case 5:
